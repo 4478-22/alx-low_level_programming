@@ -1,7 +1,10 @@
 #include "main.h"
+
+
+
 /**
- * main - print _putchar
- * is written by mbah
+ * main - Entry point of my code
+ *
  * Return: 0
  */
 
