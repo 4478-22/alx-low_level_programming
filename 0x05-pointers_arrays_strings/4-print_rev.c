@@ -3,21 +3,15 @@
  * print_rev - Prints a string in reverse followed by a new line.
  * @s: Pointer to the string to be printed in reverse.
 */
-
 void print_rev(char *s)
 {
-	int longi = o;
-	int o;
+	int lenght = _strlen(s);
+	int i;
 
-	while (*s != '\0')
+	for (i = lenght - 1; i >= 0; i--)
 	{
-		longi++;
+		_putchar(s[i]);
 	}
-	s--;
-	for(0=longi; o > 0; o--)
-	{
-		_putchar(*s);
-		s--;
-	}
+
 	_putchar('\n');
 }
