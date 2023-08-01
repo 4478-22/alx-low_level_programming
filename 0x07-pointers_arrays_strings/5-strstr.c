@@ -5,24 +5,22 @@
  * @needle: input
  * Return: Always 0 (Success)
  */
-char *_strstr(char *haystack, char *needle);
+char *_strstr(char *haystack, char *needle)
 {
-	int r;
-
-	if (needle == 0)
-		return (haystack);
-	while (*haystack)
+	for (; *haystack != '\0'; haystack++)
 	{
-		r = 0;
-		if (haystack[r] == needle[r])
+		char *l = haystack;
+		char *p = needle;
+
+		while (*l == *p && *p != '\0')
 		{
-			do {
-				if (needle[r + 1] == '\0')
-					return (haystack);
-				r++;
-			} while (haystack[r] == needle[r]);
+			l++;
+			p++;
 		}
-		haystack++
+
+		if (*p == '\0')
+			return (haystack);
 	}
-	return ('\0');
+
+	return (0);
 }
