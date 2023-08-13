@@ -12,42 +12,44 @@
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *s;
-	unsigned int i = 0, j = 0, len1 = 0, len2 = 0;
-
 	if (s1 == NULL)
 		s1 = "";
 
 	if (s2 == NULL)
 		s2 = "";
 
-	while (s1[len1])
+	unsigned int len1 = 0, len2 = 0;
+
+	while (s1[len1] != '\0')
 		len1++;
 
-	while (s2[len2])
+	while (s2[len2] != '\0')
 		len2++;
 
 	unsigned int concatLen = len1 + ((n >= len2) ? len2 : n);
 
-	char *s = malloc((concatLen + 1) * sizeof(char));
+	char *concatenated = malloc((concatLen + 1) * sizeof(char));
 
-	if (s == NULL)
+	if (concatenated == NULL)
 	return (NULL);
+
+	unsigned int i = 0;
 
 	while (i < len1)
 	{
-		s[i] = s1[i];
-		i++;
+		concatenated[i] = s1[i];
+			i++;
 	}
+	unsigned int j = 0;
 
-	while (j < n && j < len2)
+	while (j < n && s2[j] != '\0')
 	{
-		s[i] = s2[j];
-		i++;
-		j++;
+		concatenated[i] = s2[j];
+			i++;
+			j++;
 	}
 
-	s[i] = '\0';
+	concatenated[i] = '\0';
 
-	return (s);
+	return (concatenated);
 }
