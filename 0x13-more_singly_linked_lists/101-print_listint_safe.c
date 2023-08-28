@@ -23,14 +23,14 @@ size_t looped_listint_len(const listint_t *head)
 	dog = head->next;
 	fish = (head->next)->next;
 
-	while (hare)
+	while (fish)
 	{
 		if (dog == fish)
 		{
 			dog = head;
 			while (dog != fish)
 			{
-				nodes++;
+				node++;
 				dog = dog->next;
 				fish = fish->next;
 			}
@@ -64,7 +64,7 @@ size_t print_listint_safe(const listint_t *head)
 
 	node = looped_listint_len(head);
 
-	if (nodes == 0)
+	if (node == 0)
 	{
 		for (; head != NULL; node++)
 		{
