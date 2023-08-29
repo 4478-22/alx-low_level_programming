@@ -46,7 +46,7 @@ size_t looped_listint_len(const listint_t *head)
 		}
 
 		dog = dog->next;
-		dog = (dog->next)->next;
+		fish = (fish->next)->next;
 	}
 
 	return (0);
