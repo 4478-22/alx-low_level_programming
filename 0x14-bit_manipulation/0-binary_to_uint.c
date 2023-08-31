@@ -21,5 +21,5 @@ unsigned int binary_to_uint(const char *b)
 		soli = 2 * soli + (b[i] - '0');
 	}
 
-	return (dec_val);
+	return (soli);
 }
