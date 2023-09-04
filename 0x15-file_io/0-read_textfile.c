@@ -5,7 +5,7 @@
  * read_textfile- Read text file print to STDOUT.
  * @filename: text file being read
  * @letters: number of letters to be read
- * Return: w- actual number of bytes read and printed
+ * Return: c- actual number of bytes read and printed
  *         0 when function fails or filename is NULL.
  */
 ssize_t read_textfile(const char *filename, size_t letters)
@@ -20,7 +20,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	return (0);
 	buff = malloc(sizeof(char) * letters);
 	e = read(shd, buff, letters);
-	c = write(STDOUT_FILENO, buf, e);
+	c = write(STDOUT_FILENO, buff, e);
 
 	free(buff);
 	close(shd);
