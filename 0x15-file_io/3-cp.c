@@ -76,7 +76,7 @@ int main(int argc, char *argv[])
 		if (go == -1 || c == -1)
 		{
 			dprintf(STDERR_FILENO,
-			"Error: Can't read from file %s\n", argv[1]);
+				"Error: Can't read from file %s\n", argv[1]);
 			free(buff);
 			exit(98);
 		}
@@ -85,7 +85,7 @@ int main(int argc, char *argv[])
 		if (at == -1 || d == -1)
 		{
 			dprintf(STDERR_FILENO,
-			"Error: Can't write to %s\n", argv[2]);
+				"Error: Can't write to %s\n", argv[2]);
 			free(buff);
 			exit(99);
 		}
