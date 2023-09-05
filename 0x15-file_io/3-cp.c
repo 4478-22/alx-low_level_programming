@@ -81,7 +81,7 @@ int main(int argc, char *argv[])
 			exit(98);
 		}
 
-		d = write(to, buff, c);
+		d = write(at, buff, c);
 		if (at == -1 || d == -1)
 		{
 			dprintf(STDERR_FILENO,
@@ -91,7 +91,7 @@ int main(int argc, char *argv[])
 		}
 
 		c = read(go, buff, 1024);
-		to = open(argv[2], O_WRONLY | O_APPEND);
+		at = open(argv[2], O_WRONLY | O_APPEND);
 
 	} while (c > 0);
 
