@@ -23,7 +23,7 @@ int append_text_to_file(const char *filename, char *text_content)
 	}
 
 	omr = open(filename, O_WRONLY | O_APPEND);
-	w = write(omr, text_content, lus);
+	witt = write(omr, text_content, lus);
 
 	if (omr == -1 || witt == -1)
 	return (-1);
